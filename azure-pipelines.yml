@@ -14,6 +14,7 @@ steps:
   displayName: 'Install .NET Core SDK'
   inputs:
     version: 6.x
+    workingDirectory: reward-calculator-backend/reward-calculator-backend.csproj
     performMultiLevelLookup: true
     includePreviewVersions: true # Required for preview versions
 
@@ -28,7 +29,7 @@ steps:
   inputs:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
-    workingDirectory: reward-calculator-backend
+    workingDirectory: reward-calculator-backend/reward-calculator-backend.csproj
   displayName: 'dotnet build $(buildConfiguration)'
 
 
@@ -36,6 +37,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: True
+    workingDirectory: reward-calculator-backend/reward-calculator-backend.csproj
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
 
