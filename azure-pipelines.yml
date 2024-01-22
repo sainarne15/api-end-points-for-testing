@@ -18,9 +18,6 @@ steps:
     includePreviewVersions: true # Required for preview versions
 
 
-
-
-steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
