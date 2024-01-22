@@ -28,6 +28,7 @@ steps:
   inputs:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
+    workingDirectory: reward-calculator-backend
   displayName: 'dotnet build $(buildConfiguration)'
 
 
